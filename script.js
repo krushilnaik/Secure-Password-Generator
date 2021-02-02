@@ -42,7 +42,8 @@ function writePassword() {
 		passwordLength,
 		useUppercase,
 		useLowerCase,
-		useNumeric
+		useNumeric,
+		useSpecial
 	);
 
 	var passwordText = document.querySelector("#password");
