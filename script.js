@@ -33,7 +33,7 @@ function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric
 
 // Write password to the #password input
 function writePassword() {
-	var passwordLength = Number(window.prompt("Enter password length (at least 8 characters):"));
+	var passwordLength = window.prompt("Enter password length (at least 8 characters):");
 
 	if (isNaN(passwordLength) || passwordLength < 8) {
 		alert("Please specify a length greater than 8.");
