@@ -24,7 +24,12 @@ function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric
 	var password = "";
 
 	for (let x = 0; x < passwordLength; x++) {
+		// Since Math.random() generates a decimal between 0 and 1
+		// lets upscale it to make it between 0 and validCharacters.length 
+		// And then Math.floor() it because decimal indices aren't a thing
+		// Math.ceil() could potentially pick an index that's out of bounds
 		let randomIndex = Math.floor(Math.random() * validCharacters.length);
+
 		password += validCharacters[randomIndex];
 	}
 
