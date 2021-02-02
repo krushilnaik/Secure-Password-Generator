@@ -24,7 +24,7 @@ function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric
 	var password = "";
 
 	for (let x = 0; x < passwordLength; x++) {
-		randomIndex = Math.floor(Math.random() * validCharacters.length);
+		let randomIndex = Math.floor(Math.random() * validCharacters.length);
 		password += validCharacters[randomIndex];
 	}
 
