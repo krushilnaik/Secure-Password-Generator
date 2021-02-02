@@ -40,7 +40,7 @@ function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric
 function writePassword() {
 	var passwordLength = window.prompt("Enter password length (at least 8 characters):");
 
-	if (isNaN(passwordLength) || passwordLength < 8) {
+	if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
 		alert("Please specify a length greater than 8.");
 		return;
 	}
