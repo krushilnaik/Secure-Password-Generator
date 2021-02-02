@@ -33,17 +33,17 @@ function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric
 
 // Write password to the #password input
 function writePassword() {
-	var passwordLength = window.prompt("How long do you want your password to be?\n(must be at least 8 characters)");
+	var passwordLength = Number(window.prompt("Enter password length (at least 8 characters):"));
 
-	if (passwordLength < 8) {
+	if (isNaN(passwordLength) || passwordLength < 8) {
 		alert("Please specify a length greater than 8.");
 		return;
 	}
 
-	var useUppercase = confirm("Would you like to use uppercase characters?\n('OK' for yes, 'Cancel' for no)");
-	var useLowerCase = confirm("Would you like to use lowercase characters?\n('OK' for yes, 'Cancel' for no)");
-	var useNumeric   = confirm("Would you like to use numbers?\n('OK' for yes, 'Cancel' for no)");
-	var useSpecial   = confirm("Would you like to use special characters?\n('OK' for yes, 'Cancel' for no)");
+	var useSpecial   = confirm("Use special characters? ('OK' for yes, 'Cancel' for no)");
+	var useUppercase = confirm("Use uppercase characters? ('OK' for yes, 'Cancel' for no)");
+	var useLowerCase = confirm("Use lowercase? ('OK' for yes, 'Cancel' for no)");
+	var useNumeric   = confirm("Use numbers? ('OK' for yes, 'Cancel' for no)");
 
 	var password = generatePassword(
 		passwordLength,
