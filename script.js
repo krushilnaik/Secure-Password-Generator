@@ -5,7 +5,7 @@ function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric
 
 	// All of the most commonly supported characters
 	// split into strings based on the type of character
-	var specials = "\"'!@#$%^&*()_;+-=,.<>[]{}|/\\~`";
+	var specials = "\"'!@#$%^&*()_;+-=,.<>[]{}|/\\~` ";
 	var uppers   = "QWERTYUIOPASDFGHJKLZXCVBNM";
 	var lowers   = uppers.toLowerCase();
 	var numbers  = "1234567890";
