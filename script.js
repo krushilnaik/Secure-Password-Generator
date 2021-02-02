@@ -1,6 +1,29 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric, useSpecial) {
+	var specials = "\"'!@#$%^&*()_;+-=,.<>[]{}|/\\~`";
+	var uppers   = "QWERTYUIOPASDFGHJKLZXCVBNM";
+	var lowers   = uppers.toLowerCase();
+	var numbers  = "1234567890";
+
+	var validCharacters = "";
+
+	if (useUppercase) validCharacters += uppers;
+	if (useLowerCase) validCharacters += lowers;
+	if ( useNumeric ) validCharacters += numbers;
+	if ( useSpecial ) validCharacters += specials;
+
+	var password = "";
+
+	for (let x = 0; x < passwordLength; x++) {
+		randomIndex = Math.floor(Math.random() * validCharacters.length);
+		password += validCharacters[randomIndex];
+	}
+
+	return password;
+}
+
 // Write password to the #password input
 function writePassword() {
 	passwordLength = Number(window.prompt("How long do you want your password to be?\n(must be at least 8 characters)"));
@@ -25,7 +48,6 @@ function writePassword() {
 	var passwordText = document.querySelector("#password");
 
 	passwordText.value = password;
-
 }
 
 // Add event listener to generate button
