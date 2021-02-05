@@ -21,6 +21,11 @@ function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric
 
 	console.log(`validCharacters=${validCharacters}`);
 
+	if (validCharacters.length == 0) {
+		alert("Can't generate a password with no nothing!");
+		return "";
+	}
+
 	// Append characters to the end of this string
 	// randomly chosen from the "list" of valid characters
 	var password = "";
