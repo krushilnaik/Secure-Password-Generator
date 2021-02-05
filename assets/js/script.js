@@ -19,6 +19,8 @@ function generatePassword(passwordLength, useUppercase, useLowerCase, useNumeric
 	if ( useNumeric ) validCharacters += numbers;
 	if ( useSpecial ) validCharacters += specials;
 
+	console.log(`validCharacters=${validCharacters}`);
+
 	// Append characters to the end of this string
 	// randomly chosen from the "list" of valid characters
 	var password = "";
@@ -49,6 +51,9 @@ function writePassword() {
 	var useUppercase = confirm("Use uppercase characters? ('OK' for yes, 'Cancel' for no)");
 	var useLowerCase = confirm("Use lowercase? ('OK' for yes, 'Cancel' for no)");
 	var useNumeric   = confirm("Use numbers? ('OK' for yes, 'Cancel' for no)");
+
+	console.log(`Requested password length: ${passwordLength}`);
+	console.log(`useLowerCase=${useLowerCase}, useUpperCase=${useUpperCase}, useNumeric=${useNumeric}, useSpecial=${useSpecial}`);
 
 	var password = generatePassword(
 		passwordLength,
