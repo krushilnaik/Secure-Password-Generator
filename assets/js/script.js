@@ -48,7 +48,7 @@ function writePassword() {
 	}
 
 	var useSpecial   = confirm("Use special characters? ('OK' for yes, 'Cancel' for no)");
-	var useUppercase = confirm("Use uppercase characters? ('OK' for yes, 'Cancel' for no)");
+	var useUpperCase = confirm("Use uppercase characters? ('OK' for yes, 'Cancel' for no)");
 	var useLowerCase = confirm("Use lowercase? ('OK' for yes, 'Cancel' for no)");
 	var useNumeric   = confirm("Use numbers? ('OK' for yes, 'Cancel' for no)");
 
@@ -57,7 +57,7 @@ function writePassword() {
 
 	var password = generatePassword(
 		passwordLength,
-		useUppercase,
+		useUpperCase,
 		useLowerCase,
 		useNumeric,
 		useSpecial
